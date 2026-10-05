@@ -1,0 +1,36 @@
+html<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Number Generator</title>
+</head>
+<body>
+
+    <button id="pickButton">Click To Generate Note</button>
+    <div id="result">Click Button To Start</div>
+
+    <script>
+        const midiPitches = [60, 62, 64, 65, 67, 69, 71, 72];
+
+        const randomPitch = function() {
+            let randomMidiNote = midiPitches[Math.floor(Math.random() * midiPitches.length)];
+
+            let newFreq = 440 * 2 ** ((randomMidiNote - 69) / 12);
+
+            return newFreq;
+        }
+
+    
+        const button = document.getElementById('pickButton');
+        const resultDisplay = document.getElementById('result')
+
+        button.addEventListener('click', function() {
+            const randomChoice = randomPitch(midiPitches);
+            resultDisplay.textContent = randomChoice;
+
+        });
+
+    </script>
+</body>
+</html>

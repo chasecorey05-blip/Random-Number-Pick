@@ -1,0 +1,26 @@
+html<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Random Number Generator</title>
+</head>
+<body>
+
+    <button id="generateBTN">Click To Generate</button>
+
+    <p>Your Number: <span id="numberDisplay">0</span></p>
+
+    <script>
+        const button = document.getElementById('generateBTN')
+        const display = document.getElementById('numberDisplay')
+
+        button.addEventListener('click', () => {
+            const randomNumber = Math.floor(Math.random() * 100) + 1;
+
+            display.textContent = randomNumber;
+
+        });
+
+    </script>
+</body>
+</html>
